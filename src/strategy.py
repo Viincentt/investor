@@ -1,33 +1,45 @@
+import json
+from typing import List
+
+
+class Investor:
+    def __init__(self):
+        self.strategies: List[Strategy] = []
+        strategy_names = {"ETF": Etf}
+        with open("config.json") as f:
+            data = json.load(f)
+            key = data["ALPACA_API_KEY"]
+            amount = self.__get_cash(key) / len(strategy_names)
+            for name, strategy_data in data["STRATEGIES"].items():
+                self.strategies.append(strategy_names[name](key, amount, strategy_data))
+
+    def __get_cash(self, key):
+        return 100  # TODO
+
+    def run_strategies(self):
+        for strategy in self.strategies:
+            strategy.invest()
+
+
 class Strategy:
-    def __init__(self, key, amount=0):
+    def __init__(self, key, amount):
+        self.key = key
         self.amount = amount
-        self.__key = key
 
     def invest(self):
         raise NotImplementedError()
 
+    def limit_buy(self, ticker, amount):
+        # TODO
+        print(f"Buying {amount} USD of {ticker}")
 
-class MyETF(Strategy):
-    def __init__(self, amount):
-        # open config.json
-        # keep list of companies with resp. percentages
-        # update Strategy(with key and amount)
-        super(amount)
-        """
-        {
-            "AAPL": 1000 -> 33.3
-            "MSFT": 1000 -> 33.3
-            "GOOG": 1000 -> 33.3
-            "GME": 1 -> 0.000001
-        }
-        """
+
+class Etf(Strategy):
+    def __init__(self, key, amount, data):
+        super().__init__(key, amount)
+        self.companies = data["COMPANIES"]
 
     def invest(self):
-        pass
-
-
-def main():
-    amount = 0
-    strategies = [MyETF(amount)]
-    for strategy in strategies:
-        strategy.invest()
+        amount_to_invest = self.amount / len(self.companies)
+        for company in self.companies:
+            self.limit_buy(company, amount_to_invest)
