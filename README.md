@@ -6,10 +6,10 @@ After reading articles, watching videos, paper trading various strategies. I hav
 
 Reasons being, one is actually trying to predict the market based on news/feeling/ego (whatever you call it) but on this kind of timeframe, one is actually trading/fighting against huge corporations like investment banks, hedge funds, proprietary trading firms, with almost unlimited funds, brain power, infrastructure, direct link to exchanges, who do this as a **job**, every day, all day.
 
-Now that you understand the picture, the best strategy I came up with is to invest all the money I don't need and never touch it until I retire or pay for anything of substance like a car or a house.
+With this picture in mind, the best strategy I came up with is to invest all the money I **don't** need and never touch it until I retire or pay for anything of substance like a car or a house.
 
-I believe the biggest companies, have the best people, and they create value overtime. Even in failures they are never going to go down.
-A basic idea would be to invest in the S&P500. It is diversified, with a high sharpe ratio, a steady growth over the last decades...
+I believe the biggest companies, have the best people, and they create value over time. Even in times of crisis, they are never going to go down.
+A basic idea would be to invest in the S&P500. It is diversified, with a relatively high sharpe ratio, a steady growth over the last decades...
 But I am thinking I can do better than that, because being rich does **not** mean having a lot of money, being rich means having **more** money than others.
 
 So the first strategy is really simple, instead of investing into the top 500 US companies via the S&P500, I will pick the companies myself and just invest in them regurlarly as I would do with the S&P500.
