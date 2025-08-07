@@ -4,6 +4,23 @@ from typing import List
 
 class Investor:
     def __init__(self):
+        """
+        This is expecting a config.json that looks like this
+        {
+            "ALPACA_API_KEY": "XXXX",
+            "STRATEGIES": {
+                "STRATEGY_1": {
+                    DATA_FOR_STRATEGY_1
+                }
+                "ETF": {
+                    "COMPANIES": [
+                        "AAPL",
+                        "MSFT",
+                    ]
+                }
+            }
+        }
+        """
         self.strategies: List[Strategy] = []
         strategy_names = {"ETF": Etf}
         with open("config.json") as f:
