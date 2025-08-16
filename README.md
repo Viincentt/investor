@@ -21,13 +21,20 @@ I think that is the highest return I can get for the lowest maintenance and lowe
 
 ## Note
 
-Given the fact that I won't chase after small/short-term market movements, I should probably keep a percentage in cash in order to be able to invest that extra cash in times of crisis like Covid or Trump tariffs war.
+Given the fact that I won't chase after small/short-term market movements, I should probably keep a percentage in cash.
+In order to be able to invest that extra cash in times of crisis like Covid or Trump tariffs war.
+
+See this type of situation as an opportunity of promotion sales and believe the market will recover.
 
 After giving it some thoughts, maybe I should have this extra cash invest automatically more frequently than the initial strategy, based on the portfolio performance.
-For example, let's say the global market is not doing well for whatever reason, and loses 10% in 1 week, then I should probably invest more.
-See this situation as an opportunity of promotion sales and believe the market will recover.
+
+On the other hand, given the time frame of this strategy, I should probably focus on the longest period of time at first.
+
+For example, let's say the market is not doing well for whatever reason, and my portfolio loses 10% in 1 month, then I should probably invest more.
 
 Now the question is, what should I consider as an opportunity to invest more and how much more should I invest?
+
+Is it an opportunity if it goes down 5% over 1 day? 1 week? 1 month? What about 10%?...
 
 ## Example
 
@@ -40,12 +47,12 @@ Given a _config.json_ containing a list of all the financial products who I thin
         "SPY": 35
         "QQQ": 30
     }
-    "keep_cash": 20
+    "keep_cash": 15
 }
 ```
 
 ## TODO
 
 - Code
-- Find the companies
-- Tests
+- Find the ticker/financial products
+- Test with paper trading
