@@ -12,9 +12,9 @@ I believe the biggest companies, have the best people, and they create value ove
 A basic idea would be to invest in the S&P500. It is diversified, with a relatively high sharpe ratio, a steady growth over the last decades...
 But I am thinking I can do better than that, because being rich does **not** mean having a lot of money, being rich means having **more** money than others.
 
-So the first strategy is really simple, instead of investing into the top 500 US companies via the S&P500, I will pick the diversified financiel products myself and just invest in them regurlarly as I would do with the S&P500.
+So the first strategy is really simple, instead of investing into the top 500 US companies via the S&P500, I will pick the diversified financial products myself and just invest in them regurlarly as I would do with the S&P500.
 
-**AND NEVER SELL**. Actually I should invest on a monthly basis, but I should be able to count the number of times I sell with the fingers of one hand.
+**AND NEVER SELL**. Actually I should invest on a monthly basis but I should be able to count the number of times I sell with the fingers of one hand.
 That's it.
 
 I think that is the highest return I can get for the lowest maintenance and lowest stress.
@@ -28,7 +28,7 @@ See this type of situation as an opportunity of promotion sales and believe the 
 
 After giving it some thoughts, maybe I should have this extra cash invest automatically more frequently than the initial strategy, based on the portfolio performance.
 
-On the other hand, given the time frame of this strategy, I should probably focus on the longest period of time at first.
+On the other hand, given the time period of this strategy, I should probably focus on the longest timeframe at first.
 
 For example, let's say the market is not doing well for whatever reason, and my portfolio loses 10% in 1 month, then I should probably invest more.
 
