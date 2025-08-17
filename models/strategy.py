@@ -1,62 +1,36 @@
+from collections import defaultdict
 import json
-from typing import List
+import os
 
 
 class Investor:
     def __init__(self):
-        """
-        This is expecting a config.json that looks like this
-        {
-            "ALPACA_API_KEY": "XXXX",
-            "STRATEGIES": {
-                "STRATEGY_1": {
-                    DATA_FOR_STRATEGY_1
-                }
-                "ETF": {
-                    "COMPANIES": [
-                        "AAPL",
-                        "MSFT",
-                    ]
-                }
-            }
-        }
-        """
-        self.strategies: List[Strategy] = []
-        strategy_names = {"ETF": Etf}
+        try:
+            self.key = os.environ["ALPACA_KEY"]
+        except:
+            self.key = ""
+
+        TICKERS = "TICKERS"
         with open("config.json") as f:
             data = json.load(f)
-            key = data["ALPACA_API_KEY"]
-            amount = self.__get_cash(key) / len(strategy_names)
-            for name, strategy_data in data["STRATEGIES"].items():
-                self.strategies.append(strategy_names[name](key, amount, strategy_data))
+            amount = self.__get_cash()
+            self.d, total = defaultdict(float), 0
+            for ticker, percentage in data[TICKERS].items():
+                total += percentage
+                self.d[ticker] = amount * (percentage / 100)
+            if total != 100:
+                raise ValueError("Not 100%")
 
-    def __get_cash(self, key):
-        return 100  # TODO
+    def __get_cash(self):
+        if not self.key:
+            return 1000
+        # TODO alpaca api call with self.key
 
-    def run_strategies(self):
-        for strategy in self.strategies:
-            strategy.invest()
+    def run(self):
+        for ticker, amount_ in self.d.items():
+            self.__invest(ticker, amount_)
 
-
-class Strategy:
-    def __init__(self, key, amount):
-        self.key = key
-        self.amount = amount
-
-    def invest(self):
-        raise NotImplementedError()
-
-    def limit_buy(self, ticker, amount):
-        # TODO
-        print(f"Buying {amount} USD of {ticker}")
-
-
-class Etf(Strategy):
-    def __init__(self, key, amount, data):
-        super().__init__(key, amount)
-        self.companies = data["COMPANIES"]
-
-    def invest(self):
-        amount_to_invest = self.amount / len(self.companies)
-        for company in self.companies:
-            self.limit_buy(company, amount_to_invest)
+    def __invest(self, ticker, amount):
+        # limit buy
+        print(f"Investing {amount} in {ticker}.")
+        # TODO alpaca api call with self.key
