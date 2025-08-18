@@ -1,4 +1,4 @@
-from models.strategy import Investor
+from models.investor import Investor
 
 
 def main():

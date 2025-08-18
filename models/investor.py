@@ -1,19 +1,20 @@
 from collections import defaultdict
 import json
 import os
+from typing import Optional
+import requests
+
+from models.alpaca import Alpaca
 
 
 class Investor:
     def __init__(self):
-        try:
-            self.key = os.environ["ALPACA_KEY"]
-        except:
-            self.key = ""
+        self.alpaca = Alpaca()
 
         TICKERS = "TICKERS"
         with open("config.json") as f:
             data = json.load(f)
-            amount = self.__get_cash()
+            amount = self.get_cash()
             self.d, total = defaultdict(float), 0
             for ticker, percentage in data[TICKERS].items():
                 total += percentage
@@ -21,16 +22,18 @@ class Investor:
             if total != 100:
                 raise ValueError("Not 100%")
 
-    def __get_cash(self):
-        if not self.key:
-            return 1000
-        # TODO alpaca api call with self.key
+    def get_cash(self):
+        response: Optional[requests.Response] = self.alpaca.get_account()
+        if response is None:
+            return 0
+        # TODO
+        return 0
 
     def run(self):
         for ticker, amount_ in self.d.items():
-            self.__invest(ticker, amount_)
+            self.invest(ticker, amount_)
 
-    def __invest(self, ticker, amount):
+    def invest(self, ticker, amount):
         # limit buy
         print(f"Investing {amount} in {ticker}.")
         # TODO alpaca api call with self.key
