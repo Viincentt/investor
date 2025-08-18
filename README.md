@@ -54,5 +54,6 @@ Given a _config.json_ containing a list of all the financial products who I thin
 ## TODO
 
 - Code
+  - add --dry-run option
 - Find the ticker/financial products
 - Test with paper trading
