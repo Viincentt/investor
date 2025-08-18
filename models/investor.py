@@ -23,11 +23,10 @@ class Investor:
                 raise ValueError("Investments don't add up to 100%")
 
     def get_cash(self):
-        response: Optional[requests.Response] = self.alpaca.get_account()
+        response = self.alpaca.get_account()
         if response is None:
             return 0
-        # TODO
-        return 0
+        return float(response["cash"])
 
     def run(self):
         for ticker, amount_ in self.d.items():

@@ -23,4 +23,4 @@ class Alpaca:
             return None
         response = requests.get(url, headers=self.headers)
         self.check_status(response)
-        return response
+        return response.json()
