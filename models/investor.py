@@ -1,8 +1,5 @@
 from collections import defaultdict
 import json
-import os
-from typing import Optional
-import requests
 
 from models.alpaca import Alpaca
 
@@ -33,6 +30,4 @@ class Investor:
             self.invest(ticker, amount_)
 
     def invest(self, ticker, amount):
-        # limit buy
-        print(f"Investing {amount} in {ticker}.")
-        # TODO alpaca api call with self.key
+        self.alpaca.limit_buy(ticker, amount)
