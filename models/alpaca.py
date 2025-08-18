@@ -15,7 +15,7 @@ class Alpaca:
 
     def check_status(self, response: requests.Response):
         if response.status_code != 200:
-            raise ConnectionError("Request response return code failed.")
+            raise ValueError("Request response return code failed.")
 
     def get_account(self):
         url = "https://paper-api.alpaca.markets/v2/account"
