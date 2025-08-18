@@ -20,7 +20,7 @@ class Investor:
                 total += percentage
                 self.d[ticker] = amount * (percentage / 100)
             if total != 100:
-                raise ValueError("Not 100%")
+                raise ValueError("Investments don't add up to 100%")
 
     def get_cash(self):
         response: Optional[requests.Response] = self.alpaca.get_account()
