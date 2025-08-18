@@ -25,7 +25,7 @@ class Alpaca:
         self.check_status(response)
         return response.json()
 
-    def limit_buy(self, ticker, amount):
+    def market_buy(self, ticker, amount):
         url = "https://paper-api.alpaca.markets/v2/orders"
 
         payload = {

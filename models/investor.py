@@ -30,4 +30,4 @@ class Investor:
             self.invest(ticker, amount_)
 
     def invest(self, ticker, amount):
-        self.alpaca.limit_buy(ticker, amount)
+        self.alpaca.market_buy(ticker, amount)
