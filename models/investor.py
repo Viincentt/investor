@@ -1,12 +1,12 @@
 from collections import defaultdict
 import json
 
-from models.alpaca import Alpaca
+from models.alpaca_api import AlpacaAPI
 
 
 class Investor:
     def __init__(self):
-        self.alpaca = Alpaca()
+        self.alpaca = AlpacaAPI()
 
         TICKERS = "TICKERS"
         with open("config.json") as f:
@@ -20,10 +20,8 @@ class Investor:
                 raise ValueError("Investments don't add up to 100%")
 
     def get_cash(self):
-        response = self.alpaca.get_account()
-        if response is None:
-            return 0
-        return float(response["cash"])
+        res = self.alpaca.get_account().cash  # type: ignore
+        return float(res) if res else 0
 
     def run(self):
         for ticker, amount_ in self.d.items():
